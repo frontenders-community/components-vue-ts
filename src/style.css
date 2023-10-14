@@ -4,6 +4,7 @@
   /* Color scheme */
   --white-color: #fff;
   --grey-color: #dbdbdb;
+  --dark-grey-color: #939695;
   --text-color: #363636;
   --text-light-color: #222;
   --primary-color: #1abc9c;
@@ -12,6 +13,7 @@
   --success-color: #2ecc71;
   --warning-color: #f39c12;
   --danger-color: #e74c3c;
+  --disabled-color: #dde6e6;
 }
 
 * {
