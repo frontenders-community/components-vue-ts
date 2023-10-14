@@ -1,6 +1,6 @@
 # Frontenders Community
 
-## Challenge #17 - UI Kit
+## Challenge #17 - UI Kit (Vue + TS)
 La challenge per eccellenza: creare componenti di UI riutilizzabili e customizzabili.
 Puoi scegliere il framework che preferisci: Vue, Svelte, React, Angular o qualsiasi altro. Per un pizzico di pepe in più, puoi provare ad utilizzare Typescript. Per le icone puoi utilizzare una libreria a piacere: noi abbiamo scelto FontAwesome.
 
