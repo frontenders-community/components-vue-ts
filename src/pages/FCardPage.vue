@@ -41,13 +41,13 @@ const actions = [
       <div class="box">
         <h3>Collapsable</h3>
         <FCard
-          headerTitle="Mostra artista"
-          title="Claudio Bisio"
-          subtitle="Un simpatico umorista"
-          image="https://www.areazelig.it/contents/events/img_314.jpg"
+          headerTitle="Show news"
+          title="News Title"
+          subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quam optio delectus, alias cumque eligendi odio vero corporis tempora id consequatur, pariatur fuga. Totam, pariatur reprehenderit? Non maiores asperiores dicta? Recusandae soluta suscipit laborum quos maiores facere repellendus excepturi, iste sed eveniet amet consequatur eligendi temporibus mollitia quasi nostrum. Provident?"
           :collapsable="true"
         />
       </div>
+      
     </div>
   </section>
 </template>

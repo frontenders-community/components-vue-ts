@@ -25,11 +25,12 @@
           <li><router-link to="/button-page">FButton</router-link></li>
           <li><router-link to="/textfield-page">FTextField</router-link></li>
           <li><router-link to="/stepper-page">FStepper</router-link></li>
+          <li><router-link to="/card-page">Card</router-link></li>
         </ul>
 
         <strong>WIP:</strong>
         <ul>
-          <li><router-link to="/card-page">Card</router-link></li>
+         <li>Sidebar</li>
         </ul>
       </div>
     </div>

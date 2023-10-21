@@ -4,7 +4,7 @@
   <main>
     <section class="section">
       <div class="container">
-        <h1>Frontenders UI KIT</h1>
+        <h1><router-link to="/">Frontenders UI KIT</router-link></h1>
       </div>
     </section>
 

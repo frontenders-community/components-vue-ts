@@ -53,17 +53,16 @@ const getHeaderIcon = () => {
         <p v-if="title" class="title">{{ title }}</p>
         <p v-if="title && subtitle" class="subtitle">{{ subtitle }}</p>
       </div>
-      <slot name="content"></slot>
     </div>
     <div v-if="hasActions" class="card-footer">
-      <div
+      <button
         v-for="(action, i) in actions"
         :key="i"
         class="card-footer-item"
         @click="action.func"
       >
         {{ action.label }}
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -155,6 +154,11 @@ const getHeaderIcon = () => {
   flex-shrink: 0;
   justify-content: center;
   padding: 0.75rem;
+  background-color: inherit;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 0;
   cursor: pointer;
 }
 .card-footer-item:not(:last-child) {
