@@ -29,7 +29,7 @@
 
         <strong>WIP:</strong>
         <ul>
-          <li>Card</li>
+          <li><router-link to="/card-page">Card</router-link></li>
         </ul>
       </div>
     </div>
