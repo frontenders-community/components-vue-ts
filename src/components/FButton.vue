@@ -85,8 +85,8 @@ button.button {
 
 button.outlined {
   background-color: transparent;
-  border-color: var(--bg-color);
-  color: var(--bg-color);
+  border-color: var(--text-color);
+  color: var(--text-color);
 }
 
 /* Hover state */

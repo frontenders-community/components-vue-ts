@@ -25,3 +25,34 @@
 body {
   font-family: 'Urbanist', sans-serif;
 }
+
+main {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.box > .show-components {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+section.section {
+  padding: 2rem;
+}
+
+section.section.alternate {
+  background-color: #dbdbdb;
+}

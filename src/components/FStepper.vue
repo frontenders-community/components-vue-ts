@@ -63,85 +63,59 @@ const getColors = () => {
 </script>
 
 <template>
-  <div class="stepper" :style="getColors()">
-    <div class="header">
-      <!-- Progress -->
-      <div class="stepper-nav">
-        <div class="stepper-progress">
-          <div
-            class="stepper-progress-bar"
-            :style="{ width: stepperProgress }"
-          ></div>
-        </div>
-        <div
-          class="stepper-item"
-          v-for="(item, index) in props.tabs"
-          :key="index"
-          :class="{ active: index === step - 1, done: index < step - 1 }"
-        >
-          <div class="stepper-item-counter">
-            <div class="icon-box">
-              <span v-if="index >= props.step - 1">{{ index + 1 }}</span>
-              <i v-else-if="item.iconSuccess" :class="item.iconSuccess" />
-              <i v-else class="fa-solid fa-check"></i>
+  <section class="section">
+    <div class="stepper" :style="getColors()">
+      <div class="header">
+        <!-- Progress -->
+        <div class="stepper-nav">
+          <div class="stepper-progress">
+            <div class="stepper-progress-bar" :style="{ width: stepperProgress }"></div>
+          </div>
+          <div class="stepper-item" v-for="(item, index) in props.tabs" :key="index"
+            :class="{ active: index === step - 1, done: index < step - 1 }">
+            <div class="stepper-item-counter">
+              <div class="icon-box">
+                <span v-if="index >= props.step - 1">{{ index + 1 }}</span>
+                <i v-else-if="item.iconSuccess" :class="item.iconSuccess" />
+                <i v-else class="fa-solid fa-check"></i>
+              </div>
+              <h4 class="stepper-item-title">{{ item.title }}</h4>
             </div>
-            <h4 class="stepper-item-title">{{ item.title }}</h4>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Content -->
-    <div class="content-wrapper">
-      <template
-        class="stepper-content"
-        v-for="index in props.tabs.length"
-        :key="index"
-      >
-        <div class="stepper-pane" v-if="props.step === index">
-          <slot :name="index"></slot>
+      <!-- Content -->
+      <div class="content-wrapper">
+        <template class="stepper-content" v-for="index in props.tabs.length" :key="index">
+          <div class="stepper-pane" v-if="props.step === index">
+            <slot :name="index"></slot>
+          </div>
+        </template>
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer">
+        <div class="footer-content">
+          <!-- Back button -->
+          <FButton @click="decrementStep" :state="mainColor" v-if="props.step !== 1 && !loading" :text="backText"
+            outlined />
+
+          <!-- Next button -->
+          <FButton @click="incrementStep" :state="mainColor" v-if="props.step !== props.tabs.length"
+            :disabled="!props.tabs[props.step - 1].isValid" :text="nextText" outlined>
+            {{ nextText }}
+          </FButton>
+
+          <!-- Finalize button -->
+          <FButton v-else @click="finalize" :disabled="!props.tabs[props.step - 1].isValid" :state="completeColor"
+            :loading="loading" :text="doneText">
+            {{ doneText }}
+          </FButton>
         </div>
-      </template>
-    </div>
-
-    <!-- Navigation -->
-    <div class="footer">
-      <div class="footer-content">
-        <!-- Back button -->
-        <FButton
-          @click="decrementStep"
-          :state="mainColor"
-          v-if="props.step !== 1 && !loading"
-          :text="backText"
-          outlined
-        />
-
-        <!-- Next button -->
-        <FButton
-          @click="incrementStep"
-          :state="mainColor"
-          v-if="props.step !== props.tabs.length"
-          :disabled="!props.tabs[props.step - 1].isValid"
-          :text="nextText"
-          outlined
-        >
-          {{ nextText }}
-        </FButton>
-
-        <!-- Finalize button -->
-        <FButton
-          v-else
-          @click="finalize"
-          :disabled="!props.tabs[props.step - 1].isValid"
-          :state="completeColor"
-          :loading="loading"
-          :text="doneText"
-        >
-          {{ doneText }}
-        </FButton>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -192,6 +166,7 @@ const getColors = () => {
   transition: var(--transition);
   z-index: 2;
 }
+
 .stepper-item-counter {
   display: flex;
   flex-direction: column;
@@ -233,6 +208,7 @@ const getColors = () => {
 .stepper-item.active .icon-box {
   filter: brightness(100%);
 }
+
 .stepper-item.active .stepper-item-title {
   color: var(--step-color);
   font-weight: 600;
