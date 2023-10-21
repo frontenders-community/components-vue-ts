@@ -11,6 +11,7 @@ In questa repository trovi tutti i componenti sviluppati in Vue 3 + TypeScript. 
 - Button
 - TextField
 - Stepper
+- Card
 
 ### WIP
-- Card
+- Sidebar
